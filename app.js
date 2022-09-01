@@ -1,15 +1,15 @@
-var carts = document.querySelector(".cart-box").childNodes; // carts stockina fiha les child ta3 cart box 
-var plus = carts[1];   // hna declarina variable increrase w derna selection child 2 eme ta3 cart box 
-var plusCart1 = plus.childNodes[7];  // hna derna selection child ta3 plus avec l'index numero 8 li how button increase 
+var carts = document.querySelector(".cart-box").childNodes; // we stored cart box children in carts 
+var plus = carts[1];   // we declared variable increrase and   selected 2nd child 2 of cart box 
+var plusCart1 = plus.childNodes[7];  // we selectedn plus child of index num 8  button increase 
 var tshirtPrice = 250;
-var textPrice1 = carts[1].childNodes[3]; // derna selection ta3 element p li fih text price 
+var textPrice1 = carts[1].childNodes[3]; // we selected element p that contains  price text
 var tshirtQuantity = 1;
 var textQuantity1 = carts[1].childNodes[5];
 var trashCart1= carts[1].childNodes[11];
 var heartCart1 = carts[1].childNodes[13];
 var buttonColor = false; 
 var totalPrice = document.querySelector(".total-price")
-totalPrice.textContent = "Total Price : 500 DA" ; // vue que ktbt variable f global scope tektab le text dakehl element h2 (by the way h2 f html raho vide)
+totalPrice.textContent = "Total Price : 500 DA" ; // since i wrote variable in global scope the text was written insideelement h2 (by the way h2 f html is empty )
 var x = 500
  
 var hoodieCart = carts[3];
@@ -36,7 +36,7 @@ function totSum(){
 // ------------------------------------------------------- T-Shirt----------------------------------
 // Button plus 
 plusCart1.addEventListener("click", function(event){
-    tshirtPrice = tshirtPrice + 250; // hna hkmna price w dernah dkhel roho w zdnalo 250 
+    tshirtPrice = tshirtPrice + 250; //  we selected price inside itself and added 250
     textPrice1.textContent = "Price : " + tshirtPrice + " DA"    // lokan ndirha haka textPrice1.textContent = tshirtPrice traficher f browser ghir price bla le texct price : da
     tshirtQuantity = tshirtQuantity + 1;
     textQuantity1.textContent = "Quantity : " + tshirtQuantity;
@@ -51,7 +51,7 @@ var moinsCart1 = carts[1].childNodes[9];  // hna derna 2 eme methode de selectio
 
 moinsCart1.addEventListener("click", function(event) {
 
-// derna condition bach manhbtoch taht 0 donc le -  , ida kan tshirtPrice > 0 && tshirtQuantity > 0 exuciti la condiction 
+// we added a condition to not decrease under 0 so if tshirtPrice > 0 && tshirtQuantity > 0 excute the condiction 
 
 if ( tshirtPrice > 0 && tshirtQuantity > 0){
 tshirtPrice = tshirtPrice - 250;
@@ -66,7 +66,7 @@ totSum()
 })
 // remove cart button t-shirt
 
-// sloution 1 : remore cart 1 ---- hna derna function sahla on a selectione onclick avec le nom de la function removeCart() et on a selectioner carts[1] comme parent pour supprimer la cart 1 
+// sloution 1 : remore cart 1 ---- we created a simple function, we selected onclick with the function name removeCart() and we slected carts[1] as parent to delete cart 1 
 /**function removeCart() {
     carts[1].remove()
 
@@ -81,12 +81,11 @@ trashCart1.addEventListener('click', function(event){
 
 // Heart button 
 heartCart1.addEventListener("click", function(event){
-     // hna derna variable initial buttonColor = false avec une condition que ida buttonColor kan false mdlo color red w raj3o true une fois ncliki 2la btton heart            
+    // we gave buttonColor = false with a condition if buttonColor was false give it color red and turn it true once we click on the heart button
     if (buttonColor === false){
         heartCart1.style.color = "red" 
         buttonColor = true;
-     
-     // hna dert l3akss ki nkliki ncoverti letat true ver false ki nkiliki une 2eme fois w color tatbdel twali black 
+     // here we did the oposite, when we click we convert the stat true to false when we click a second time the color changes to black
     }else if (buttonColor === true){
         heartCart1.style.color = "black" 
         buttonColor = false;
@@ -153,7 +152,8 @@ trashCart2.addEventListener("click", function(event){
 
 
 // button heart 
-//(matnsach lazem tjr tselectioner element li rah tkhdem 3lih by creating declaring a variable and giving it a nice name relevant to the purpose of the element)
+// don't forget you have to select the element that you are targeting by creating declaring a variable and giving it a nice name relevant to the purpose of the element)
+
  
 heartCart2.addEventListener("click", function(event){
   if (buttonColor2 === true){
